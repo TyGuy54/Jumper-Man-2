@@ -1,0 +1,136 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Worlds/tile_maps/world.tres" type="TileSet" id=1]
+[ext_resource path="res://collectables/game_end_gem/gem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assests/platformerGraphicsDeluxe_Updated/bg.png" type="Texture" id=4]
+[ext_resource path="res://collectables/coins/coins.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Worlds/world_1/HUD.gd" type="Script" id=6]
+[ext_resource path="res://Assests/platformerGraphicsDeluxe_Updated/Items/coinGold.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2584, 832.33 )
+
+[node name="world_2" type="Node2D"]
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="background"]
+position = Vector2( 4108, 860 )
+scale = Vector2( 33.0938, 14.7188 )
+texture = ExtResource( 4 )
+
+[node name="level-2" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 70, 70 )
+format = 1
+tile_data = PoolIntArray( -1114062, 25, 0, -917446, 25, 0, -851896, 25, 0, -786413, 24, 0, -655353, 26, 0, -655329, 24, 0, -655298, 25, 0, -589782, 26, 0, -589773, 25, 0, -524260, 26, 0, -458738, 24, 0, -393212, 24, 0, -393179, 25, 0, -393157, 25, 0, -327630, 26, 0, -262132, 26, 0, -262101, 26, 0, -262074, 25, 0, -196600, 25, 0, -196588, 24, 0, -196544, 24, 0, -131041, 26, 0, -131036, 26, 0, -131035, 26, 0, -2, 1, 0, -65534, 25, 0, -65511, 24, 0, -65510, 24, 0, -65509, 24, 0, -65485, 24, 0, 65534, 1, 0, 9, 24, 0, 17, 25, 0, 57, 24, 0, 131070, 1, 0, 65590, 24, 0, 65591, 24, 0, 196606, 1, 0, 131078, 18, 0, 131082, 18, 0, 131101, 26, 0, 131111, 26, 0, 131119, 26, 0, 262142, 1, 0, 196615, 22, 0, 196616, 23, 0, 196622, 23, 0, 196623, 22, 0, 196625, 23, 0, 196629, 19, 0, 327678, 1, 0, 327679, 19, 0, 262149, 12, 0, 262150, 16, 0, 262151, 16, 0, 262152, 16, 0, 262153, 16, 0, 262154, 16, 0, 262158, 15, 0, 262159, 16, 0, 262160, 16, 0, 262161, 17, 0, 262209, 18, 0, 262211, 16, 0, 262212, 16, 0, 262213, 16, 0, 393214, 1, 0, 327680, 23, 0, 327681, 22, 0, 327683, 23, 0, 327684, 12, 0, 327685, 11, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327701, 16, 0, 327702, 14, 0, 327738, 18, 0, 327741, 22, 0, 327742, 23, 0, 327744, 22, 0, 327746, 16, 0, 327747, 16, 0, 327748, 1, 0, 327749, 16, 0, 327750, 16, 0, 458750, 1, 0, 458751, 16, 0, 393216, 16, 0, 393217, 16, 0, 393218, 16, 0, 393219, 16, 0, 393220, 11, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393237, 1, 0, 393238, 13, 0, 393239, 14, 0, 393243, 19, 0, 393245, 19, 0, 393251, 19, 0, 393253, 19, 0, 393268, 18, 0, 393271, 19, 0, 393273, 23, 0, 393275, 22, 0, 393276, 12, 0, 393277, 16, 0, 393278, 16, 0, 393279, 16, 0, 393280, 16, 0, 393281, 16, 0, 393282, 11, 0, 393283, 1, 0, 393284, 1, 0, 393285, 1, 0, 393286, 1, 0, 524286, 1, 0, 524287, 1, 0, 458752, 1, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458773, 1, 0, 458774, 1, 0, 458775, 13, 0, 458776, 14, 0, 458778, 23, 0, 458780, 22, 0, 458786, 23, 0, 458794, 23, 0, 458798, 23, 0, 458805, 22, 0, 458806, 23, 0, 458808, 12, 0, 458809, 16, 0, 458810, 16, 0, 458811, 16, 0, 458812, 11, 0, 458813, 1, 0, 458814, 1, 0, 458815, 1, 0, 458816, 1, 0, 458817, 1, 0, 458818, 1, 0, 458819, 1, 0, 458820, 1, 0, 458821, 1, 0, 458822, 1, 0, 589822, 1, 0, 589823, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524309, 1, 0, 524310, 1, 0, 524311, 1, 0, 524312, 13, 0, 524313, 16, 0, 524314, 16, 0, 524315, 16, 0, 524316, 16, 0, 524317, 16, 0, 524318, 16, 0, 524322, 16, 0, 524323, 16, 0, 524324, 16, 0, 524325, 16, 0, 524329, 15, 0, 524330, 17, 0, 524334, 15, 0, 524335, 17, 0, 524339, 16, 0, 524340, 16, 0, 524341, 16, 0, 524342, 16, 0, 524343, 16, 0, 524344, 11, 0, 524345, 1, 0, 524346, 1, 0, 524347, 1, 0, 524348, 1, 0, 524349, 1, 0, 524350, 1, 0, 524351, 1, 0, 524352, 1, 0, 524353, 1, 0, 524354, 1, 0, 524355, 1, 0, 524356, 1, 0, 524357, 1, 0, 524358, 1, 0, 655358, 1, 0, 655359, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 589848, 1, 0, 589849, 1, 0, 589850, 1, 0, 589851, 1, 0, 589852, 1, 0, 589853, 1, 0, 589854, 1, 0, 589855, 1, 0, 589856, 1, 0, 589857, 1, 0, 589858, 1, 0, 589859, 1, 0, 589860, 1, 0, 589861, 1, 0, 589875, 1, 0, 589876, 1, 0, 589877, 1, 0, 589878, 1, 0, 589879, 1, 0, 589880, 1, 0, 589881, 1, 0, 589882, 1, 0, 589883, 1, 0, 589884, 1, 0, 589885, 1, 0, 589886, 1, 0, 589887, 1, 0, 589888, 1, 0, 589889, 1, 0, 589890, 1, 0, 589891, 1, 0, 589892, 1, 0, 589893, 1, 0, 589894, 1, 0, 720894, 1, 0, 720895, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 1, 0, 655385, 1, 0, 655386, 1, 0, 655387, 1, 0, 655388, 1, 0, 655389, 1, 0, 655390, 1, 0, 655391, 1, 0, 655392, 1, 0, 655393, 1, 0, 655394, 1, 0, 655395, 1, 0, 655396, 1, 0, 655397, 1, 0, 655411, 1, 0, 655412, 1, 0, 655413, 1, 0, 655414, 1, 0, 655415, 1, 0, 655416, 1, 0, 655417, 1, 0, 655418, 1, 0, 655419, 1, 0, 655420, 1, 0, 655421, 1, 0, 655422, 1, 0, 655423, 1, 0, 655424, 1, 0, 655425, 1, 0, 655426, 1, 0, 655427, 1, 0, 655428, 1, 0, 655429, 1, 0, 655430, 1, 0, 720917, 1, 0, 720918, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0, 720922, 1, 0, 720923, 1, 0, 720924, 1, 0, 720925, 1, 0, 720926, 1, 0, 720927, 1, 0, 720928, 1, 0, 720929, 1, 0, 720930, 1, 0, 720931, 1, 0, 720932, 1, 0, 720933, 1, 0, 720947, 1, 0, 720948, 1, 0, 720949, 1, 0, 720950, 1, 0, 720951, 1, 0, 720952, 1, 0, 720953, 1, 0, 720954, 1, 0, 720955, 1, 0, 720956, 1, 0, 720957, 1, 0, 720958, 1, 0, 720959, 1, 0, 720960, 1, 0, 720961, 1, 0, 720962, 1, 0, 720963, 1, 0, 720964, 1, 0, 720965, 1, 0, 720966, 1, 0 )
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="coins" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 528, 184 )
+
+[node name="coins2" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 624, 184 )
+
+[node name="coins3" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 1016, 200 )
+
+[node name="coins4" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 1208, 200 )
+
+[node name="coins5" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 1112, 200 )
+
+[node name="coins6" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 296, 296 )
+
+[node name="coins7" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 1496, 280 )
+
+[node name="coins8" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 2224, 472 )
+
+[node name="coins9" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 2328, 472 )
+
+[node name="coins10" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 1912, 488 )
+
+[node name="coins11" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 2056, 488 )
+
+[node name="coins12" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 3288, 512 )
+
+[node name="coins13" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 2944, 504 )
+
+[node name="coins14" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 3600, 480 )
+
+[node name="coins15" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 3760, 480 )
+
+[node name="coins16" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 3984, 424 )
+
+[node name="coins17" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 4328, 336 )
+
+[node name="coins18" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 4480, 328 )
+
+[node name="coins19" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 4176, 416 )
+
+[node name="coins20" parent="coins" instance=ExtResource( 5 )]
+position = Vector2( 2552, 488 )
+
+[node name="gem" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4792, 64 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 112, 288 )
+
+[node name="fallzone" type="Area2D" parent="."]
+position = Vector2( 2488, 968.34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fallzone"]
+position = Vector2( 0, 751.33 )
+shape = SubResource( 1 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="Panel" type="Panel" parent="HUD"]
+margin_left = 841.0
+margin_top = 14.0
+margin_right = 993.0
+margin_bottom = 94.0
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+margin_left = 824.0
+margin_right = 936.0
+margin_bottom = 104.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="x" type="Label" parent="HUD"]
+margin_left = 920.0
+margin_top = 48.0
+margin_right = 952.0
+margin_bottom = 64.0
+text = "X"
+
+[node name="num_of_coins" type="Label" parent="HUD"]
+margin_left = 952.0
+margin_top = 48.0
+margin_right = 992.0
+margin_bottom = 62.0
+text = "0"
+
+[connection signal="collented_coin" from="Player" to="HUD" method="_on_Player_collented_coin"]
+[connection signal="body_entered" from="fallzone" to="Player" method="_on_fallzone_body_entered"]
+[connection signal="body_exited" from="fallzone" to="Player" method="_on_fallzone_body_exited"]
